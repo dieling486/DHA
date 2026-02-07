@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Applications: React.FC = () => {
+  const baseUrl = import.meta.env.BASE_URL
+  
   return (
     <section id="applications" className="section">
       <div className="container">
@@ -9,7 +11,7 @@ const Applications: React.FC = () => {
           <div className="applications-gallery">
             <div className="application-image-card">
               <div className="application-image-wrapper">
-                <img src="./photos/application1.png" alt="应用场景1" />
+                <img src={`${baseUrl}photos/application1.png`} alt="应用场景1" />
               </div>
               <div className="application-image-caption">
                 原料供应
@@ -18,7 +20,7 @@ const Applications: React.FC = () => {
 
             <div className="application-image-card">
               <div className="application-image-wrapper">
-                <img src="./photos/application2.png" alt="应用场景2" />
+                <img src={`${baseUrl}photos/application2.png`} alt="应用场景2" />
               </div>
               <div className="application-image-caption">
                 婴幼儿食品开发
@@ -27,7 +29,7 @@ const Applications: React.FC = () => {
 
             <div className="application-image-card">
               <div className="application-image-wrapper">
-                <img src="./photos/application3.png" alt="应用场景3" />
+                <img src={`${baseUrl}photos/application3.png`} alt="应用场景3" />
               </div>
               <div className="application-image-caption">
                 中老年健康食品
@@ -36,7 +38,7 @@ const Applications: React.FC = () => {
 
             <div className="application-image-card">
               <div className="application-image-wrapper">
-                <img src="./photos/application4.png" alt="应用场景4" />
+                <img src={`${baseUrl}photos/application4.png`} alt="应用场景4" />
               </div>
               <div className="application-image-caption">
                 临床医学药品应用
@@ -45,7 +47,7 @@ const Applications: React.FC = () => {
 
             <div className="application-image-card">
               <div className="application-image-wrapper">
-                <img src="./photos/application5.png" alt="应用场景5" />
+                <img src={`${baseUrl}photos/application5.png`} alt="应用场景5" />
               </div>
               <div className="application-image-caption">
                 宠物食品补充剂
@@ -54,7 +56,7 @@ const Applications: React.FC = () => {
 
             <div className="application-image-card">
               <div className="application-image-wrapper">
-                <img src="./photos/application6.png" alt="应用场景6" />
+                <img src={`${baseUrl}photos/application6.png`} alt="应用场景6" />
               </div>
               <div className="application-image-caption">
                 功能性休闲食品

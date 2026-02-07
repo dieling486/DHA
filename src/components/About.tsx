@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 
 const About: React.FC = () => {
+  const baseUrl = import.meta.env.BASE_URL
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [imageScale, setImageScale] = useState(1)
   const imageRef = useRef<HTMLImageElement>(null)
@@ -73,23 +74,23 @@ const About: React.FC = () => {
             </p>
             {/* 工厂图片网格 - 2行3列 */}
             <div className="factory-gallery">
-              <div className="factory-image-item" onClick={() => handleImageClick('./photos/factory1.png')}>
-                <img src="./photos/factory1.png" alt="工厂图片1" />
+              <div className="factory-image-item" onClick={() => handleImageClick(`${baseUrl}photos/factory1.png`)}>
+                <img src={`${baseUrl}photos/factory1.png`} alt="工厂图片1" />
               </div>
-              <div className="factory-image-item" onClick={() => handleImageClick('./photos/factory2.png')}>
-                <img src="./photos/factory2.png" alt="工厂图片2" />
+              <div className="factory-image-item" onClick={() => handleImageClick(`${baseUrl}photos/factory2.png`)}>
+                <img src={`${baseUrl}photos/factory2.png`} alt="工厂图片2" />
               </div>
-              <div className="factory-image-item" onClick={() => handleImageClick('./photos/factory3.png')}>
-                <img src="./photos/factory3.png" alt="工厂图片3" />
+              <div className="factory-image-item" onClick={() => handleImageClick(`${baseUrl}photos/factory3.png`)}>
+                <img src={`${baseUrl}photos/factory3.png`} alt="工厂图片3" />
               </div>
-              <div className="factory-image-item" onClick={() => handleImageClick('./photos/factory4.png')}>
-                <img src="./photos/factory4.png" alt="工厂图片4" />
+              <div className="factory-image-item" onClick={() => handleImageClick(`${baseUrl}photos/factory4.png`)}>
+                <img src={`${baseUrl}photos/factory4.png`} alt="工厂图片4" />
               </div>
-              <div className="factory-image-item" onClick={() => handleImageClick('./photos/factory5.png')}>
-                <img src="./photos/factory5.png" alt="工厂图片5" />
+              <div className="factory-image-item" onClick={() => handleImageClick(`${baseUrl}photos/factory5.png`)}>
+                <img src={`${baseUrl}photos/factory5.png`} alt="工厂图片5" />
               </div>
-              <div className="factory-image-item" onClick={() => handleImageClick('./photos/factory6.png')}>
-                <img src="./photos/factory6.png" alt="工厂图片6" />
+              <div className="factory-image-item" onClick={() => handleImageClick(`${baseUrl}photos/factory6.png`)}>
+                <img src={`${baseUrl}photos/factory6.png`} alt="工厂图片6" />
               </div>
             </div>
             <br />
@@ -100,20 +101,20 @@ const About: React.FC = () => {
             
             {/* 专利证书图片网格 */}
             <div className="patent-gallery">
-              <div className="patent-image-item" onClick={() => handleImageClick('./photos/patent1.png')}>
-                <img src="./photos/patent1.png" alt="专利证书1" />
+              <div className="patent-image-item" onClick={() => handleImageClick(`${baseUrl}photos/patent1.png`)}>
+                <img src={`${baseUrl}photos/patent1.png`} alt="专利证书1" />
               </div>
-              <div className="patent-image-item" onClick={() => handleImageClick('./photos/patent2.png')}>
-                <img src="./photos/patent2.png" alt="专利证书2" />
+              <div className="patent-image-item" onClick={() => handleImageClick(`${baseUrl}photos/patent2.png`)}>
+                <img src={`${baseUrl}photos/patent2.png`} alt="专利证书2" />
               </div>
-              <div className="patent-image-item" onClick={() => handleImageClick('./photos/patent3.png')}>
-                <img src="./photos/patent3.png" alt="专利证书3" />
+              <div className="patent-image-item" onClick={() => handleImageClick(`${baseUrl}photos/patent3.png`)}>
+                <img src={`${baseUrl}photos/patent3.png`} alt="专利证书3" />
               </div>
-              <div className="patent-image-item" onClick={() => handleImageClick('./photos/patent4.png')}>
-                <img src="./photos/patent4.png" alt="专利证书4" />
+              <div className="patent-image-item" onClick={() => handleImageClick(`${baseUrl}photos/patent4.png`)}>
+                <img src={`${baseUrl}photos/patent4.png`} alt="专利证书4" />
               </div>
-              <div className="patent-image-item" onClick={() => handleImageClick('./photos/patent5.png')}>
-                <img src="./photos/patent5.png" alt="专利证书5" />
+              <div className="patent-image-item" onClick={() => handleImageClick(`${baseUrl}photos/patent5.png`)}>
+                <img src={`${baseUrl}photos/patent5.png`} alt="专利证书5" />
               </div>
             </div>
             

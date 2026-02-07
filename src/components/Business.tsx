@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Business: React.FC = () => {
+  const baseUrl = import.meta.env.BASE_URL
+  
   return (
     <section id="business" className="section">
       <div className="container">
@@ -8,7 +10,7 @@ const Business: React.FC = () => {
         <div className="business-cards">
           <div className="business-card">
             <div className="business-card-image">
-              <img src="./photos/DHA原料.png" alt="磷脂型DHA原材料" />
+              <img src={`${baseUrl}photos/DHA原料.png`} alt="磷脂型DHA原材料" />
             </div>
             <div className="business-card-content">
               <h3>磷脂型DHA原材料</h3>
@@ -20,7 +22,7 @@ const Business: React.FC = () => {
 
           <div className="business-card">
             <div className="business-card-image">
-              <img src="./photos/DHA胶囊.png" alt="磷脂型DHA胶囊食品" />
+              <img src={`${baseUrl}photos/DHA胶囊.png`} alt="磷脂型DHA胶囊食品" />
             </div>
             <div className="business-card-content">
               <h3>磷脂型DHA胶囊食品</h3>
