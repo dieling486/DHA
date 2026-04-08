@@ -64,10 +64,11 @@ git push -u origin main
 
 ### 步骤 4: 自动部署
 
-git add .
-git commit -m"update"
-git push origin main
-
+```
+#git add .
+#git commit -m"update"
+#git push origin main
+```
 你可以在仓库的 "Actions" 标签页查看部署进度。
 
 部署完成后，你的网站将在以下地址访问：
