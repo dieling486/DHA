@@ -59,12 +59,14 @@ git push -u origin main
 1. 在 GitHub 仓库页面，点击 "Settings"（设置）
 2. 在左侧菜单找到 "Pages"
 3. 在 "Build and deployment" 部分：
-   - Source: 选择 "GitHub Actions"
+   - Source: 选择 "gh-pages"
 4. 保存设置
 
 ### 步骤 4: 自动部署
 
-现在每次你推送代码到 `main` 分支时，GitHub Actions 会自动构建并部署你的网站。
+git add .
+git commit -m"update"
+git push origin main
 
 你可以在仓库的 "Actions" 标签页查看部署进度。
 
