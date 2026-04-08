@@ -16,11 +16,8 @@ const Home: React.FC = () => {
       <div className="hero-banner">
         <div className="hero-background">
           <img src="/DHA/photos/com_building.jpg" alt="企业建筑" />
-          <div className="hero-overlay"></div>
         </div>
         <div className="hero-content">
-          <h1 className="hero-main-title">普脂康</h1>
-          <div className="hero-divider"></div>
           <p className="hero-description">
             普脂康成立于2026年，采用水相研发生产磷脂型DHA，现如今具有成熟的工艺技术，企业力量雄厚，具有一体化生产规模。立志成为绿色企业的领军者。
           </p>

@@ -9,7 +9,7 @@ body {
     font-family: 'Microsoft YaHei', 'SimHei', Arial, sans-serif;
     line-height: 1.6;
     color: #2c3e50;
-    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    background: linear-gradient(140deg, #f4f7ff 0%, #eef8ff 45%, #f5f2ff 100%);
     min-height: 100vh;
 }
 
@@ -25,13 +25,29 @@ body {
 
 /* 导航栏样式 */
 header {
-    background: linear-gradient(135deg, #1e88e5 0%, #00897b 100%);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 64, 175, 0.88) 50%, rgba(14, 116, 144, 0.88) 100%);
     color: white;
     padding: 1rem 0;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(30, 136, 229, 0.3);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.25);
+    backdrop-filter: blur(10px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+header.header-hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+header.header-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 nav {
@@ -69,14 +85,14 @@ nav {
 }
 
 .nav-menu a:hover {
-    color: #81c784;
-    text-shadow: 0 0 5px rgba(129, 199, 132, 0.5);
+    color: #bfdbfe;
+    text-shadow: 0 0 8px rgba(191, 219, 254, 0.55);
 }
 
 .nav-menu a.active {
-    color: #81c784;
+    color: #c4b5fd;
     font-weight: 600;
-    text-shadow: 0 0 5px rgba(129, 199, 132, 0.5);
+    text-shadow: 0 0 8px rgba(196, 181, 253, 0.55);
 }
 
 /* 主要内容区域 */
@@ -92,7 +108,7 @@ main {
 }
 
 .section:nth-child(even) {
-    background-color: rgba(232, 245, 233, 0.7);
+    background-color: rgba(238, 248, 255, 0.72);
 }
 
 .section h2 {
@@ -113,10 +129,10 @@ main {
 .content-block {
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #e8f5e9 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #eef4ff 60%, #f6f1ff 100%);
     border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(30, 136, 229, 0.15);
-    border: 1px solid rgba(0, 137, 123, 0.2);
+    box-shadow: 0 8px 24px rgba(30, 64, 175, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.18);
 }
 
 /* 业务卡片样式 */
@@ -130,7 +146,7 @@ main {
 }
 
 .business-card {
-    background: linear-gradient(135deg, #ffffff 0%, #e8f5e9 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #eef6ff 55%, #f5f3ff 100%);
     border-radius: 32px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(30, 136, 229, 0.2);
@@ -148,9 +164,9 @@ main {
 
 .business-card-image {
     width: 100%;
-    height: 300px;
+    aspect-ratio: 3 / 2;
     overflow: hidden;
-    background: linear-gradient(135deg, #e3f2fd 0%, #c8e6c9 100%);
+    background: linear-gradient(135deg, #e0f2fe 0%, #e0e7ff 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -264,7 +280,7 @@ main {
 }
 
 .application-image-wrapper {
-    width: 100%;
+    width: 375px;
     height: 250px;
     overflow: hidden;
 }
@@ -433,12 +449,13 @@ main {
 .hero-banner {
     position: relative;
     width: 100%;
-    height: 85vh;
-    min-height: 600px;
+    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
+    background: linear-gradient(135deg, #f2fff5 0%, #effff6 50%, #ecfff3 100%);
 }
 
 .hero-background {
@@ -454,7 +471,7 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center 15%;
     animation: slowZoom 20s ease-in-out infinite alternate;
 }
 
@@ -476,8 +493,8 @@ main {
     background: linear-gradient(
         135deg,
         rgba(30, 136, 229, 0.75) 0%,
-        rgba(0, 137, 123, 0.65) 50%,
-        rgba(67, 160, 71, 0.7) 100%
+        rgba(30, 64, 175, 0.62) 55%,
+        rgba(99, 102, 241, 0.65) 100%
     );
     z-index: 2;
 }
@@ -486,10 +503,11 @@ main {
     position: relative;
     z-index: 3;
     text-align: center;
-    color: white;
+    color: #166534;
     max-width: 900px;
-    padding: 0 40px;
+    padding: 0 40px 10vh;
     animation: fadeInUp 1.2s ease-out;
+    background: transparent;
 }
 
 @keyframes fadeInUp {
@@ -508,14 +526,15 @@ main {
     font-weight: 700;
     margin-bottom: 2rem;
     letter-spacing: 0.1em;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    color: #22c55e;
+    text-shadow: 0 8px 22px rgba(21, 128, 61, 0.3);
     animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .hero-divider {
     width: 120px;
     height: 4px;
-    background: linear-gradient(90deg, transparent, white, transparent);
+    background: linear-gradient(90deg, transparent, #22c55e, transparent);
     margin: 0 auto 2.5rem;
     animation: fadeInUp 1s ease-out 0.4s both;
 }
@@ -523,9 +542,10 @@ main {
 .hero-description {
     font-size: 1.4rem;
     line-height: 2;
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: 0.05em;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    text-shadow: 0 4px 14px rgba(0, 0, 0, 0.55);
     max-width: 800px;
     margin: 0 auto 2.5rem;
     animation: fadeInUp 1s ease-out 0.6s both;
@@ -534,23 +554,41 @@ main {
 .hero-cta {
     display: inline-block;
     padding: 1rem 2.5rem;
-    color: white;
+    color: #ffffff;
     font-size: 1.2rem;
     font-weight: 500;
     transition: all 0.3s ease;
     cursor: pointer;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(22, 101, 52, 0.35);
     border-radius: 50px;
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
     animation: fadeInUp 1s ease-out 0.8s both;
+    box-shadow: 0 10px 22px rgba(22, 163, 74, 0.28);
 }
 
 .hero-cta:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.8);
+    background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+    border-color: rgba(21, 128, 61, 0.7);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(22, 101, 52, 0.25);
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 42%;
+    background: linear-gradient(
+        to top,
+        rgba(21, 128, 61, 0.52) 0%,
+        rgba(34, 197, 94, 0.3) 48%,
+        rgba(34, 197, 94, 0) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
 }
 
 /* 业务板块样式 - 左侧文本，右侧图片 */
@@ -561,13 +599,13 @@ main {
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #f0f7ff 55%, #ffffff 100%);
     padding: 4rem 0;
     gap: 4rem;
 }
 
 .business-section:hover {
-    background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
 }
 
 .business-text-content {
@@ -589,7 +627,7 @@ main {
 .business-divider {
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, #00897b, transparent);
+    background: linear-gradient(90deg, #2563eb, #0ea5e9, transparent);
     margin-bottom: 2.5rem;
 }
 
@@ -614,14 +652,14 @@ main {
 
 .business-value {
     font-size: 1.4rem;
-    color: #00897b;
+    color: #2563eb;
     font-weight: 600;
 }
 
 .business-cta {
     display: inline-block;
     padding: 0.8rem 0;
-    color: #00897b;
+    color: #2563eb;
     font-size: 1.1rem;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -662,13 +700,13 @@ main {
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f8faff 45%, #f5f3ff 100%);
     padding: 4rem 0;
     gap: 4rem;
 }
 
 .application-section:hover {
-    background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #eef4ff 100%);
 }
 
 .application-text-content {
@@ -690,7 +728,7 @@ main {
 .application-divider {
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, #1e88e5, transparent);
+    background: linear-gradient(90deg, #1d4ed8, #6366f1, transparent);
     margin-bottom: 2.5rem;
 }
 
@@ -715,7 +753,7 @@ main {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #1e88e5;
+    color: #1d4ed8;
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -723,7 +761,7 @@ main {
 .application-cta {
     display: inline-block;
     padding: 0.8rem 0;
-    color: #1e88e5;
+    color: #1d4ed8;
     font-size: 1.1rem;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -768,7 +806,7 @@ main {
 .home-subtitle {
     text-align: center;
     font-size: 1.3rem;
-    color: #00897b;
+    color: #475569;
     margin-bottom: 3rem;
 }
 
@@ -784,7 +822,7 @@ main {
     align-items: center;
     gap: 3rem;
     margin-bottom: 4rem;
-    background: linear-gradient(135deg, #ffffff 0%, #e8f5e9 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #eef4ff 62%, #f6f1ff 100%);
     border-radius: 20px;
     padding: 2.5rem;
     box-shadow: 0 8px 25px rgba(30, 136, 229, 0.15);
@@ -810,11 +848,11 @@ main {
 }
 
 .business-item::before {
-    background: linear-gradient(180deg, #00897b 0%, #26a69a 100%);
+    background: linear-gradient(180deg, #0ea5e9 0%, #2563eb 100%);
 }
 
 .application-item::before {
-    background: linear-gradient(180deg, #43a047 0%, #66bb6a 100%);
+    background: linear-gradient(180deg, #6366f1 0%, #8b5cf6 100%);
 }
 
 .home-section-item:hover {
@@ -894,13 +932,13 @@ main {
 }
 
 .home-section-item:hover .section-link {
-    color: #00897b;
+    color: #6366f1;
 }
 
 .section-item-image {
     flex: 0 0 300px;
     height: 200px;
-    background: linear-gradient(135deg, #e3f2fd 0%, #c8e6c9 100%);
+    background: linear-gradient(135deg, #e0f2fe 0%, #e0e7ff 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
