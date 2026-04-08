@@ -65,9 +65,12 @@ git push -u origin main
 ### 步骤 4: 自动部署
 
 ```
-#git add .
-#git commit -m"update"
-#git push origin main
+#添加所有文件
+git add .
+#更新指令
+git commit -m"update"
+#推送到main
+git push origin main
 ```
 你可以在仓库的 "Actions" 标签页查看部署进度。
 
